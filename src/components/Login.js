@@ -3,6 +3,7 @@
 
 import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
+import Navbar from './Navbar'
 
 class LogIn extends Component {
   constructor () {  // Create and initialize state
@@ -10,7 +11,8 @@ class LogIn extends Component {
     this.state = {
       user: {
         userName: '',
-        password: ''
+        password: '',
+        memberSince: ''
       },
       redirect: false
     }
@@ -22,7 +24,9 @@ class LogIn extends Component {
     const inputField = e.target.name
     const inputValue = e.target.value
     updatedUser[inputField] = inputValue
-
+    //Set memberSince state of updated user equal to current date in mm/dd/yyyy format
+    let date=new Date()
+    updatedUser['memberSince']=(date.getMonth()+1)+"/"+date.getDate()+"/"+date.getFullYear()
     this.setState({user: updatedUser})
   }
 
@@ -40,6 +44,7 @@ class LogIn extends Component {
     // Render the login form
     return (
       <div>
+        <Navbar/>
         <h1>Login</h1>
 
         <form onSubmit={this.handleSubmit}>

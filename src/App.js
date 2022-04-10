@@ -22,6 +22,7 @@ class App extends Component {
   mockLogIn = (logInInfo) => {  
     const newUser = {...this.state.currentUser}
     newUser.userName = logInInfo.userName
+    newUser.memberSince= logInInfo.memberSince
     this.setState({currentUser: newUser})
   }
 
