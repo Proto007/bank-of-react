@@ -16,3 +16,46 @@ code {
 input, button {
 	margin: 5px;
 }
+
+/* Add a black background color to the top navigation */
+.topnav {
+  background-color: rgb(0, 0, 0);
+  overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: right;
+  color: #ffffff;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration:none;
+  font-size: 20px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: rgb(165, 252, 252);
+  color: black;
+}
+
+.topnav-right{
+  float:left;
+}
+
+.topnav-right a:hover{
+  background-color: transparent;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+.big-icon{
+  animation: rotation 10s infinite linear;
+}
