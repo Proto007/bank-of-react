@@ -19,7 +19,7 @@ input, button {
 
 /* Add a black background color to the top navigation */
 .topnav {
-  background-color: rgb(0, 0, 0);
+  background-color:darkblue;
   overflow: hidden;
 }
 
@@ -58,4 +58,11 @@ input, button {
 
 .big-icon{
   animation: rotation 10s infinite linear;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+.page-title{
+  color: darkblue;
 }

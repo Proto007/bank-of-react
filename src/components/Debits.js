@@ -1,5 +1,7 @@
 // src/components/Debits.js
 
+import Navbar from "./Navbar";
+
 const Debits = (props) => {
 	let debitsView = () => {
     const { debits } = props;
@@ -10,8 +12,9 @@ const Debits = (props) => {
   }
   return (
     <div>
-      <h1>Debits</h1>
-      {debitsView()}
+      <Navbar/>
+      <h1 className="page-title">Debits</h1>
+      {/* {debitsView()} */}
       <form onSubmit={props.addDebit}>
         <input type="text" name="description" />
         <input type="number" name="amount" />
