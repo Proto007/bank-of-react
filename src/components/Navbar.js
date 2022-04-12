@@ -5,10 +5,10 @@ class Navbar extends Component{
     render(){
         return(
             <div className="topnav">
-                <Link to="/userProfile">User Profile</Link>
+                <Link to="/userProfile">Profile</Link>
                 <Link to="/login">Login</Link>
                 <Link to="">Credits</Link>
-                <Link to="">Debits</Link>
+                <Link to="/debits">Debits</Link>
                 <div className="topnav-right">
                     <Link to="/">
                         <img src="/logo192.png" alt="react-logo" width="25" height="25"/>

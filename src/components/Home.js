@@ -10,11 +10,10 @@ class Home extends Component {
     return (
       <div>
         <Navbar/>
-        <h1>Bank of React</h1>
+        <h1 className='page-title'>Bank of React</h1>
         <div className="big-icon">
           <img src="/logo512.png" alt="big-logo"/>
         </div>
-        {/* <AccountBalance accountBalance={this.props.accountBalance}/> */}
       </div>
     );
   }
