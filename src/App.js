@@ -5,13 +5,12 @@ import {BrowserRouter as Router, Route} from 'react-router-dom';
 import Home from './components/Home';
 import UserProfile from './components/UserProfile';
 import LogIn from './components/Login';
-import Debits from './components/Debits';
+import DebitsData from './components/DebitsData';
 
 class App extends Component {
   constructor() {  // Create and initialize state
     super(); 
     this.state = {
-      accountBalance: 14568.27,
       currentUser: {
         userName: 'Joe Smith',
         memberSince: '07/23/96',
@@ -29,12 +28,12 @@ class App extends Component {
 
   // Create Routes and React elements to be rendered using React components
   render() {  
-    const HomeComponent = () => (<Home accountBalance={this.state.accountBalance}/>);
+    const HomeComponent = () => (<Home/>);
     const UserProfileComponent = () => (
       <UserProfile userName={this.state.currentUser.userName} memberSince={this.state.currentUser.memberSince}  />
     );
     const LogInComponent = () => (<LogIn user={this.state.currentUser} mockLogIn={this.mockLogIn} />)  // Pass props to "LogIn" component
-    const DebitsComponent = () =>(<Debits/>)      
+    const DebitsComponent = () =>(<DebitsData/>);      
     return (
       <Router>
         <div>
