@@ -1,20 +1,20 @@
 // src/components/Debits.js
-
 import Navbar from "./Navbar";
 
 const Debits = (props) => {
-	let debitsView = () => {
+  let debitsView = () => {
+    console.log(props)
     const { debits } = props;
     return debits.map((debit) => {
       let date = debit.date.slice(0,10);
-      return <li key={debit.id}>{debit.amount} {debit.description} {date}</li>
+      return <li className="items-list" key={debit.id}>{debit.amount} {debit.description} {date}</li>
     }) 
   }
   return (
     <div>
       <Navbar/>
       <h1 className="page-title">Debits</h1>
-      {/* {debitsView()} */}
+      {debitsView()}
       <form onSubmit={props.addDebit}>
         <input type="text" name="description" />
         <input type="number" name="amount" />

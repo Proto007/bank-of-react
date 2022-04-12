@@ -6,6 +6,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
+  background-color:honeydew;
 }
 
 code {
@@ -35,7 +36,7 @@ input, button {
 
 /* Change the color of links on hover */
 .topnav a:hover {
-  background-color: rgb(165, 252, 252);
+  background-color: rgb(149, 204, 250);
   color: black;
 }
 
@@ -45,6 +46,7 @@ input, button {
 
 .topnav-right a:hover{
   background-color: transparent;
+  box-shadow: 2cm;
 }
 
 @keyframes rotation {
@@ -65,4 +67,9 @@ input, button {
 
 .page-title{
   color: darkblue;
+}
+
+.items-list{
+  color:blueviolet;
+  text-align:center;
 }
