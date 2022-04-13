@@ -13,12 +13,12 @@ const Debits = (props) => {
   return (
     <div>
       <Navbar/>
-      <h1 className="page-title">Debits</h1>
-      <AccountBalance accountBalance={props.accountBalance}/>
+      <AccountBalance accountBalance={props.accountBalance} creditsAmount={props.creditsAmount} debitsAmount={props.debitsAmount}/>
+      <h1 className="debit-credit-title">Debits</h1>
       {debitsView()}
-      <form onSubmit={props.addDebit}>
+      <form className="add-form" onSubmit={props.addDebit}>
         <input type="text" name="description" />
-        <input type="number" name="amount" />
+        <input type="number" step={0.01} name="amount" />
         <button type="submit">Add Debit</button>
       </form>
     </div>
