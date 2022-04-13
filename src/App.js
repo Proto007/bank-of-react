@@ -97,18 +97,35 @@ class App extends Component {
       date:date_str  
     }
     this.setState({debits:[...this.state.debits,newDebit]});
-    this.setState({accountBalance:this.state.accountBalance-amount});
+    this.setState({accountBalance:(this.state.accountBalance-Number(amount))});
+  }
+
+  addCredit =(e)=>{
+    e.preventDefault();
+    let description=e.target[0].value;
+    let amount=e.target[1].value;
+    let date=new Date();
+    let date_str=(date.getMonth()+1)+"-"+date.getDate()+"-"+date.getFullYear();
+    let id=this.state.credits.length+1;
+    let newCredit={
+      id: id,
+      description:description,
+      amount:amount,
+      date:date_str  
+    }
+    this.setState({credits:[...this.state.credits,newCredit]});
+    this.setState({accountBalance:(this.state.accountBalance+Number(amount))});
   }
 
   // Create Routes and React elements to be rendered using React components
   render() {  
     const HomeComponent = () => (<Home/>);
     const UserProfileComponent = () => (
-      <UserProfile userName={this.state.currentUser.userName} memberSince={this.state.currentUser.memberSince}  />
+      <UserProfile userName={this.state.currentUser.userName} memberSince={this.state.currentUser.memberSince}/>
     );
     const LogInComponent = () => (<LogIn user={this.state.currentUser} mockLogIn={this.mockLogIn}/>)  // Pass props to "LogIn" component
     const DebitsComponent = () =>(<Debits accountBalance={this.state.accountBalance} debits={this.state.debits} addDebit={this.addDebit}/>);  
-    const CreditsComponent = () =>(<Credits accountBalance={this.state.accountBalance} credits={this.state.credits}/>);  
+    const CreditsComponent = () =>(<Credits accountBalance={this.state.accountBalance} credits={this.state.credits} addCredit={this.addCredit}/>);  
     return (
       <Router>
         <div>
