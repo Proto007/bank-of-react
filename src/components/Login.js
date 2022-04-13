@@ -12,7 +12,7 @@ class LogIn extends Component {
       user: {
         userName: '',
         password: '',
-        memberSince: ''
+        memberSince: '' // added memberSince to keep track of the day logged in
       },
       redirect: false
     }

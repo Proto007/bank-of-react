@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 
 class Navbar extends Component{
     render(){
+        // Added navbar with links to other components
+        // Navbar app logo links to the Home page
         return(
             <div className="topnav">
                 <Link to="/userProfile">Profile</Link>
