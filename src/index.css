@@ -73,3 +73,10 @@ input, button {
   color:blueviolet;
   text-align:center;
 }
+
+.account-balance{
+  color:darkblue;
+  text-align: left;
+  margin: auto;
+  padding: auto;
+}
