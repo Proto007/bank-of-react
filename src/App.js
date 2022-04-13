@@ -7,6 +7,7 @@ import UserProfile from './components/UserProfile';
 import LogIn from './components/Login';
 import Debits from './components/Debits';
 import axios from 'axios';
+import Credits from './components/Credits';
 
 class App extends Component {
   constructor() {  // Create and initialize state
@@ -17,7 +18,8 @@ class App extends Component {
         memberSince: '07/23/96',
       },
       accountBalance:0,
-      debits:[]
+      debits:[],
+      credits:[]
     }
   }
 
@@ -81,7 +83,8 @@ class App extends Component {
       <UserProfile userName={this.state.currentUser.userName} memberSince={this.state.currentUser.memberSince}  />
     );
     const LogInComponent = () => (<LogIn user={this.state.currentUser} mockLogIn={this.mockLogIn}/>)  // Pass props to "LogIn" component
-    const DebitsComponent = () =>(<Debits accountBalance={this.state.accountBalance} debits={this.state.debits} addDebit={this.addDebit}/>);      
+    const DebitsComponent = () =>(<Debits accountBalance={this.state.accountBalance} debits={this.state.debits} addDebit={this.addDebit}/>);  
+    const CreditsComponent = () =>(<Credits accountBalance={this.state.accountBalance} credits={this.state.credits}/>);  
     return (
       <Router>
         <div>
@@ -89,6 +92,7 @@ class App extends Component {
           <Route exact path="/userProfile" render={UserProfileComponent}/>
           <Route exact path="/login" render={LogInComponent}/>
           <Route exact path="/debits" render={DebitsComponent}/>
+          <Route exact path="/credits" render={CreditsComponent}/>
         </div>
       </Router>
     );

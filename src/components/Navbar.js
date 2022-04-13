@@ -7,7 +7,7 @@ class Navbar extends Component{
             <div className="topnav">
                 <Link to="/userProfile">Profile</Link>
                 <Link to="/login">Login</Link>
-                <Link to="">Credits</Link>
+                <Link to="/credits">Credits</Link>
                 <Link to="/debits">Debits</Link>
                 <div className="topnav-right">
                     <Link to="/">
