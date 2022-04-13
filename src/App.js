@@ -33,11 +33,12 @@ class App extends Component {
 
   // Make async API call to retrieve data from remote website
   async componentDidMount() {
-    let linkToAPI = 'https://moj-api.herokuapp.com/debits';  // Link to remote website API
+    let linkToDebitsAPI = 'https://moj-api.herokuapp.com/debits';  // Link to remote website API
+    let linkToCreditsAPI = 'https://moj-api.herokuapp.com/credits';
 
     // Await for promise (completion) returned from API call
     try {  // Accept success response as array of JSON objects (debits)
-      let response = await axios.get(linkToAPI);
+      let response = await axios.get(linkToDebitsAPI);
       console.log(response);  // Print out response
       // To get data object in the response, need to use "response.data"
       this.setState({debits: response.data});  // Store received data in state's "debits" object
@@ -50,6 +51,21 @@ class App extends Component {
       }    
     }
     
+    // Await for promise (completion) returned from API call
+    try {  // Accept success response as array of JSON objects (debits)
+      let response = await axios.get(linkToCreditsAPI);
+      console.log(response);  // Print out response
+      // To get data object in the response, need to use "response.data"
+      this.setState({credits: response.data});  // Store received data in state's "debits" object
+    } 
+    catch (error) {  // Print out errors at console when there is an error response
+      if (error.response) {
+        // The request was made, and the server responded with error message and status code.
+        console.log(error.response.data);  // Print out error message (e.g., Not Found)
+        console.log(error.response.status);  // Print out error status code (e.g., 404)
+      }    
+    }
+
     let getDebitsBalance= () => {
       this.state.debits.map((debit) => (
         this.setState({accountBalance: this.state.accountBalance-debit.amount})
@@ -57,6 +73,14 @@ class App extends Component {
     }
 
     getDebitsBalance();
+
+    let getCreditsBalance= () => {
+      this.state.credits.map((credit) => (
+        this.setState({accountBalance: this.state.accountBalance+credit.amount})
+      )) 
+    }
+
+    getCreditsBalance();
   } 
 
   addDebit =(e)=>{
