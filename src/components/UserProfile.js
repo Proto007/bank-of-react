@@ -5,6 +5,7 @@ import React, {Component} from 'react';
 import Navbar from './Navbar';
 
 class UserProfile extends Component {
+  //Render items to show in UserProfile component
   render() {
     return (
         <div>

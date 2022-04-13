@@ -2,11 +2,12 @@
 // The Home component is used to demonstrate the use of Link.
 
 import React, {Component} from 'react';
-//import AccountBalance from './AccountBalance';
 import Navbar from './Navbar';
 
 class Home extends Component {
   render() {
+    
+    //Render items to show in Home component
     return (
       <div>
         <Navbar/>

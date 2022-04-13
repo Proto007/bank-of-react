@@ -1,15 +1,21 @@
 // src/components/Credits.js
+// Credits component takes props and renders credits data appropriately 
 import AccountBalance from "./AccountBalance";
 import Navbar from "./Navbar";
 
+// Array of credits is taken as a prop
 const Credits = (props) => {
+  // Function credits goes through prop array and returns each item as html <li> 
   let creditsView = () => {
     const { credits } = props;
+    //Each of the items in prop array credits is read and displayed in <li>
     return credits.map((credit) => {
-      let date = credit.date.slice(0,10);
+      let date = credit.date.slice(0,10); //Get the first 10 characters of date array
       return <li className="items-list" key={credit.id}>{credit.amount} {credit.description} {date}</li>
     }) 
   }
+  
+  // Render items in the Credits component
   return (
     <div>
       <Navbar/>   
