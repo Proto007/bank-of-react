@@ -47,7 +47,32 @@ class App extends Component {
         console.log(error.response.status);  // Print out error status code (e.g., 404)
       }    
     }
-  }  
+    
+    let getDebitsBalance= () => {
+      this.state.debits.map((debit) => (
+        this.setState({accountBalance: this.state.accountBalance-debit.amount})
+      )) 
+    }
+
+    getDebitsBalance();
+  } 
+
+  addDebit =(e)=>{
+    e.preventDefault();
+    let description=e.target[0].value;
+    let amount=e.target[1].value;
+    let date=new Date();
+    let date_str=(date.getMonth()+1)+"-"+date.getDate()+"-"+date.getFullYear();
+    let id=this.state.debits.length+1;
+    let newDebit={
+      id: id,
+      description:description,
+      amount:amount,
+      date:date_str  
+    }
+    this.setState({debits:[...this.state.debits,newDebit]});
+    this.setState({accountBalance:this.state.accountBalance-amount});
+  }
 
   // Create Routes and React elements to be rendered using React components
   render() {  
@@ -55,8 +80,8 @@ class App extends Component {
     const UserProfileComponent = () => (
       <UserProfile userName={this.state.currentUser.userName} memberSince={this.state.currentUser.memberSince}  />
     );
-    const LogInComponent = () => (<LogIn user={this.state.currentUser} mockLogIn={this.mockLogIn} />)  // Pass props to "LogIn" component
-    const DebitsComponent = () =>(<Debits accountBalance={this.state.accountBalance} debits={this.state.debits}/>);      
+    const LogInComponent = () => (<LogIn user={this.state.currentUser} mockLogIn={this.mockLogIn}/>)  // Pass props to "LogIn" component
+    const DebitsComponent = () =>(<Debits accountBalance={this.state.accountBalance} debits={this.state.debits} addDebit={this.addDebit}/>);      
     return (
       <Router>
         <div>

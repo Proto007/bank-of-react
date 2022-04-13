@@ -4,7 +4,6 @@ import Navbar from "./Navbar";
 
 const Debits = (props) => {
   let debitsView = () => {
-    console.log(props)
     const { debits } = props;
     return debits.map((debit) => {
       let date = debit.date.slice(0,10);
