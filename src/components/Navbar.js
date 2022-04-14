@@ -13,7 +13,7 @@ class Navbar extends Component{
                 <Link to="/debits">Debits</Link>
                 <div className="topnav-right">
                     <Link to="/">
-                        <img src="/logo192.png" alt="react-logo" width="25" height="25"/>
+                        <img src="logo192.png" alt="react-logo" width="25" height="25"/>
                     </Link>
                 </div>
             </div>
