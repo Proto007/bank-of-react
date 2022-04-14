@@ -9,7 +9,7 @@ class AccountBalance extends Component {
       //accountBalance, creditsAmount, debitAmount are props passed from other components
       //toFixed function used to change the props to 2 decimal places
       <div className='balance'>
-        <h2>
+        <h2 className='balance-text'>
           Balance: {this.props.accountBalance.toFixed(2)}
           <br/>
           <br/>

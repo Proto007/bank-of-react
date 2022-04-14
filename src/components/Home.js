@@ -12,9 +12,7 @@ class Home extends Component {
       <div>
         <Navbar/>
         <h1 className='page-title'>Bank of React</h1>
-        <div className="big-icon">
-          <img src="logo512.png" alt="big-logo"/>
-        </div>
+        <img className="big-icon" src='logo512.png' alt="big-logo"/>
       </div>
     );
   }

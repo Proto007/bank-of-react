@@ -40,11 +40,11 @@ input, button {
   color: black;
 }
 
-.topnav-right{
+.topnav-left{
   float:left;
 }
 
-.topnav-right a:hover{
+.topnav-left a:hover{
   background-color: transparent;
   box-shadow: 2cm;
 }
@@ -62,7 +62,7 @@ input, button {
   animation: rotation 10s infinite linear;
   margin-left: auto;
   margin-right: auto;
-  width: 50%;
+  width: 30%;
 }
 
 .page-title{
@@ -80,15 +80,18 @@ input, button {
 .balance{
   color:rgb(149, 204, 250);
   background-color: rgb(0, 0, 0);
-  width: 200px;
+  width: 15%;
   height:100%;
   border: 5px dashed rgb(149, 204, 250);
-  padding: 50px;
   margin: 20px;
   text-align: left;
   position:absolute;
   margin: auto;
   padding: auto;
+}
+
+.balance-text{
+  padding: 20px;
 }
 
 .add-form{

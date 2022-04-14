@@ -7,15 +7,15 @@ class Navbar extends Component{
         // Navbar app logo links to the Home page
         return(
             <div className="topnav">
-                <Link to="/userProfile">Profile</Link>
-                <Link to="/login">Login</Link>
-                <Link to="/credits">Credits</Link>
-                <Link to="/debits">Debits</Link>
-                <div className="topnav-right">
+                <div className="topnav-left">
                     <Link to="/">
                         <img src="logo192.png" alt="react-logo" width="25" height="25"/>
                     </Link>
                 </div>
+                <Link to="/userProfile">Profile</Link>
+                <Link to="/login">Login</Link>
+                <Link to="/credits">Credits</Link>
+                <Link to="/debits">Debits</Link>               
             </div>
         );
     }
