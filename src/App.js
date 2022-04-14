@@ -104,7 +104,7 @@ class App extends Component {
     let amount=e.target[1].value;
     // get the current date in mm-dd-yyyy format
     let date=new Date();
-    let date_str=(date.getMonth()+1)+"-"+date.getDate()+"-"+date.getFullYear();
+    let date_str=date.getFullYear()+"-"+(date.getMonth()+1).toString().padStart(2,'0')+"-"+date.getDate().toString().padStart(2,'0');
     // assign a unique id based on the size of the debits array
     let id=this.state.debits.length+1;
     // create new object using the data from input field, the date and id
@@ -131,7 +131,7 @@ class App extends Component {
     let amount=e.target[1].value;
     // get the current date in mm-dd-yyyy format
     let date=new Date();
-    let date_str=(date.getMonth()+1)+"-"+date.getDate()+"-"+date.getFullYear();
+    let date_str=date.getFullYear()+"-"+(date.getMonth()+1).toString().padStart(2,'0')+"-"+date.getDate().toString().padStart(2,'0');
     // assign a unique id based on the size of the credits array
     let id=this.state.credits.length+1;
     // create new object using the data from input field, the date and id
@@ -139,7 +139,7 @@ class App extends Component {
       id: id,
       description:description,
       amount:amount,
-      date:date_str  
+      date:date_str
     }
     // update accountBalance and creditsAmount states with the amount from input field
     // update credits array state by adding the newCredit object
@@ -179,11 +179,13 @@ class App extends Component {
     return (
       <Router>
         <div>
-          <Route exact path="/" render={HomeComponent}/>
-          <Route exact path="/userProfile" render={UserProfileComponent}/>
-          <Route exact path="/login" render={LogInComponent}/>
-          <Route exact path="/debits" render={DebitsComponent}/>
-          <Route exact path="/credits" render={CreditsComponent}/>
+          <Router basename="/bank-of-react">
+            <Route exact path="/" render={HomeComponent}/>
+            <Route exact path="/userProfile" render={UserProfileComponent}/>
+            <Route exact path="/login" render={LogInComponent}/>
+            <Route exact path="/debits" render={DebitsComponent}/>
+            <Route exact path="/credits" render={CreditsComponent}/>
+          </Router>
         </div>
       </Router>
     );
